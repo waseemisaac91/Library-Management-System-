@@ -57,7 +57,7 @@ class Book:
     @classmethod
     def from_dict(cls, data):
         """Create a Book instance from a dictionary."""
-        book = cls(
+        return cls(
             data["title"],
             data["author"],
             data["publication_year"]
@@ -66,7 +66,6 @@ class Book:
         book.is_borrowed = data.get("is_borrowed", False)
         book.borrowed_by = data.get("borrowed_by", None)
 
-        return book
 
     def __repr__(self):
         return (
@@ -96,7 +95,7 @@ class Novel(Book):
 
     @classmethod
     def from_dict(cls, data):
-        novel = cls(
+        return cls(
             data["title"],
             data["author"],
             data["publication_year"],
@@ -106,7 +105,6 @@ class Novel(Book):
         novel.is_borrowed = data.get("is_borrowed", False)
         novel.borrowed_by = data.get("borrowed_by", None)
 
-        return novel
 
     def __repr__(self):
         return (
@@ -138,7 +136,7 @@ class Magazine(Book):
 
     @classmethod
     def from_dict(cls, data):
-        magazine = cls(
+        return cls(
             data["title"],
             data["author"],
             data["publication_year"],
@@ -148,7 +146,6 @@ class Magazine(Book):
         magazine.is_borrowed = data.get("is_borrowed", False)
         magazine.borrowed_by = data.get("borrowed_by", None)
 
-        return magazine
 
     def __repr__(self):
         return (
